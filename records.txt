@@ -1,4 +1,4 @@
-Raneddo;20sm
+Raneddo;20
 Nikita;2
 Natasha;4
 Stanislav;5
