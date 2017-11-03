@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import pygame
 from random import randint
 from easygui import enterbox, msgbox
