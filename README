@@ -1,0 +1,25 @@
+I'm very sorry for my code. But I can do only 
+this because there was no time. I hope, that next
+code will be better.
+And now about this program.
+It's game. You start with one ball and it 'run' on field.
+When ball concerns walls it changes self direction.
+You can move ball with mouse. The Ball will be where you click.
+On playing field are located 3 buttons:
+1) "Pause" -- pausing game, but "mousemoving" isn't pausing
+2) "Rating" -- show last 10 plays (name : seconds)
+3) "Add ball" -- about it next chapter.
+When you click to button "Add ball", real game is starting.
+You should control new ball with "WASD".
+When first ball concerns new, game is finishing.
+You shold your name, and you results turn out to be in rating table.
+Then you can see rating with pressing button "Rating"
+Note, real time starts when do you press "Add ball"
+Then you can only close the game and start again.
+                    Have fun!
+                    
+                    
+                                    Created by Raneddo
+                                    GNU/GPL v3.0
+                                    Thanks PyGame and easygui for libs
+                                    And thanks informatics.ru
