@@ -11,28 +11,25 @@ bg_color = 33, 33, 33
 game_stop = False
 
 about = \
-"""
-I'm very sorry for my code. But I can do only 
-this because there was no time. I hope, that next
+    """
+I'm very sorry for my code. But I can do
+this only because there was no time. I hope the next
 code will be better.
-
-And now about this program.
-It's game. You start with one ball and it 'run' on field.
-When ball concerns walls it changes self direction.
-You can move ball with mouse. The Ball will be where you click.
-On playing field are located 3 buttons:
-1) "Pause" -- pausing game, but "mousemoving" isn't pausing
-2) "Rating" -- show last 10 plays (name : seconds)
-3) "Add ball" -- about it next chapter.
-
-When you click to button "Add ball", real game is starting.
-You should control new ball with "WASD".
-When first ball concerns new, game is finishing.
-You shold your name, and you results turn out to be in rating table.
-Then you can see rating with pressing button "Rating"
-Note, real time starts when do you press "Add ball"
-Then you can only close the game and start again.
-
+And now about this application.
+It's a game. You start with one ball and it is 'running' on the field.
+When the ball touches walls it changes its direction.
+You can move the ball with the mouse. The Ball will be wherever you are clicking.
+On the playing field 3 buttons are located:
+1) "Pause" -- pausing game but "mousemoving" isn't pausing
+2) "Rating" -- shows last 10 plays (name : seconds)
+3) "Add ball" -- the next chapter describes it.
+When clicking the button "Add ball", the real game is starting.
+The new ball you should control with "WASD".
+When the first ball is touching the new one the game is finishing.
+You should enter your name and your results turn out to be in the rating table.
+Then you can see the rating by pressing the button "Rating"
+Note: the real time starts when pressing "Add ball"
+Then you can only close the game and start it again.
                     Have fun!
                     
                     
@@ -138,7 +135,7 @@ def main():
             pygame.time.wait(100)
             continue
 
-# --- обработка событий ---
+        # --- обработка событий ---
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 w_close = True
@@ -164,7 +161,7 @@ def main():
                                 if count > 10:
                                     break
                                 temp = i.split(';')
-                                message += str(count) + ') ' + temp[0]+' : ' + temp[1] + '\n'
+                                message += str(count) + ') ' + temp[0] + ' : ' + temp[1] + '\n'
                                 count += 1
                     msgbox(title='Rating', msg=message, ok_button='Continue')
                     game_stop = False
@@ -173,7 +170,7 @@ def main():
             if event.type == pygame.KEYDOWN:
                 active_ball.move_key(event.key)
         if add_ball.see is False and \
-                (((b.geometry.left - nb.geometry.left)**2 + (b.geometry.top - nb.geometry.top)**2)**0.5 < 100):
+                (((b.geometry.left - nb.geometry.left) ** 2 + (b.geometry.top - nb.geometry.top) ** 2) ** 0.5 < 100):
             """
             if nb.geometry[0] < b.geometry[0]:
                 b.speed[0] = 2
@@ -188,7 +185,7 @@ def main():
             name = get_name()
             if name is not None and name != '':
                 with open('records.txt', 'a') as f:
-                    f.write(name+';'+str((pygame.time.get_ticks()-new_time)//1000)+'\n')
+                    f.write(name + ';' + str((pygame.time.get_ticks() - new_time) // 1000) + '\n')
 
         # --- игровая логика ---
         b.shift()
@@ -212,10 +209,9 @@ def main():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        if  sys.argv[1] in ("--about", '-a'):
+        if sys.argv[1] in ("--about", '-a'):
             print(about)
         else:
             print('For info about prog, enter -a or --about')
     else:
         main()
-
